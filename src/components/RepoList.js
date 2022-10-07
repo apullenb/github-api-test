@@ -6,11 +6,11 @@ function repoList(props) {
 
   return (
     <RepoCont>
-       <RepoBox> {props.repos.slice(0, 10).map((r, i) => {
+       <RepoBox> {props.repos.slice(10, 19).map((r, i) => {
            return <div key={i}><Repo repo={r} /> </div>
         })}
        </RepoBox> 
-       <RepoBox> {props.repos.slice(10, 20).map((r, i) => {
+       <RepoBox> {props.repos.slice(0, 9).map((r, i) => {
            return <div key={i}><Repo repo={r} /> </div>
         })}
        </RepoBox> 
