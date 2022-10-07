@@ -5,24 +5,36 @@ import Repo from '../components/Repo'
 function repoList(props) {
 
   return (
-    <RepoBox>
-        {props.repos.map((r, i) => {
+    <RepoCont>
+       <RepoBox> {props.repos.slice(0, 10).map((r, i) => {
            return <div key={i}><Repo repo={r} /> </div>
         })}
-        
-    </RepoBox>
+       </RepoBox> 
+       <RepoBox> {props.repos.slice(10, 20).map((r, i) => {
+           return <div key={i}><Repo repo={r} /> </div>
+        })}
+       </RepoBox> 
+    </RepoCont>
   )
 }
 
 export default repoList;
 
+const RepoCont = styled.section`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+border: 1.5px solid  #113b46;
+margin: 5% 4%;
+padding: 1% 2%;
+background-color: #b3d9e3ff;
+
+`
 
 const RepoBox = styled.div`
 display: flex;
 flex-direction: column;
-border: 1px solid gray;
-margin: 5%;
-padding: 1%;
-background-color: #c9dee3ff;
+content-align: space-between;
+width: 48%;
 `
 

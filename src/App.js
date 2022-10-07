@@ -18,14 +18,16 @@ function App() {
       }
     } 
 
-useEffect(() => {
-  // getRepositories()
-}, [])
+
 
   return (
     <Page>
       <h2>Top 20 JavaScript Repos!</h2>
-      <RepoList repos={repos} />
+      <h4>Want to See the Most Liked Repos?</h4>
+      <button onClick={getRepositories}>View Now</button>
+        <div className={repos.length > 0 ? '' : 'hide'}>
+          <RepoList repos={repos} />
+        </div>
     </Page>
   );
 }
@@ -33,10 +35,8 @@ useEffect(() => {
 export default App;
 
 const Page = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin: 2% 15%;
+
+margin: 2% 20%;
 
   h2 {
     background-color: #113b46;
@@ -44,5 +44,28 @@ margin: 2% 15%;
     color: white;
     font-size: 40px;
     padding: 1% 3%;
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  button {
+    margin: 0 40%;
+    max-width: 200px;
+    background-color: #113b46;
+    color: white;
+    font-size: 19px;
+    padding: 5px 25px;
+    border: none;
+    box-shadow: 2px 2px 3px gray;
+    cursor: pointer;
+  }
+
+  .hide {
+    display: none;
   }
 `
