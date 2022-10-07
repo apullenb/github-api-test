@@ -12,7 +12,7 @@ function App() {
       try {
         const response = await axios.get('https://api.github.com/search/repositories?q=language:javascript')
         const sortRepos = response.data.items.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 20)
-        setRepos(response.data.items)
+        setRepos(sortRepos)
       } catch (error) {
         console.error(error)
       }

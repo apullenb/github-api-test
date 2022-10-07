@@ -6,11 +6,11 @@ function repoList(props) {
 
   return (
     <RepoCont>
-       <RepoBox> {props.repos.slice(10, 19).map((r, i) => {
+       <RepoBox> {props.repos.slice(0, 10).map((r, i) => {
            return <div key={i}><Repo repo={r} /> </div>
         })}
        </RepoBox> 
-       <RepoBox> {props.repos.slice(0, 9).map((r, i) => {
+       <RepoBox> {props.repos.slice(10, 20).map((r, i) => {
            return <div key={i}><Repo repo={r} /> </div>
         })}
        </RepoBox> 
@@ -25,7 +25,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 border: 1.5px solid  #113b46;
-margin: 5% 4%;
+margin: 5% 2%;
 padding: 1% 2%;
 background-color: #b3d9e3ff;
 
